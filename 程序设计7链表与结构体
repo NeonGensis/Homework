@@ -165,7 +165,7 @@ void ShowAll()//显示全部
 
 int main()
 {
-	printf("兰州大学某学术巨巨制作的简陋资料管理系统(菜只是一时的！)\n");
+	printf("兰州大学某学术巨巨制作的简陋资料管理系统(菜只是一时的！)--作者李浩--学号320240941381\n");
 	struct stu_info* p;
 	p = (struct stu_info*)malloc(sizeof(struct stu_info));
 	strcpy((*p).stu_num, "000000001");
