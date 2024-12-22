@@ -56,13 +56,13 @@ void Insert(int n)//插入新的学生信息
 	struct stu_info* p1, * p2 = head, * p3 = head;
 	p1 = (struct stu_info*)malloc(sizeof(struct stu_info));
 	printf("输入学号(最多9数字):");
-	scanf("%9s", &(*p1).stu_num);
+	scanf("%9s", p1->stu_num);
 	printf("输入姓名(最多7字符):");
-	scanf("%7s", &(*p1).stu_name);
+	scanf("%7s", p1->stu_name);
 	printf("输入性别(最多1字符，M男，F女):");
-	scanf("%1s", &(*p1).stu_sex);
+	scanf("%1s", p1->stu_sex);
 	printf("输入成绩:");
-	scanf("%d", &(*p1).stu_score);
+	scanf("%d", &p1->stu_score);
 	if (n == 0)
 	{
 		(*p1).next = head;
