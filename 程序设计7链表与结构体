@@ -120,13 +120,32 @@ void Delete(int n)//删除指定学生信息
 	}
 }
 
-void Search(int n)//查询指定学生信息
+void Search(char arr[10])//查询指定学生信息
 {
-	struct stu_info* p1 = head, * p2 = head, * p3 = head;
-	int a;
-	for (int i = 0; i = NOP; i++)
+	struct stu_info* p1 = head;
+	for (int i = 0; i < NOP; i++)
 	{
-
+		if (strcmp((*p1).stu_num, arr) == 0)
+		{
+			printf("--查找到目标，以下是其信息--\n");
+			printf("学号%s\n", (*p1).stu_num);
+			printf("姓名%s\n", (*p1).stu_name);
+			printf("性别%s\n", (*p1).stu_sex);
+			printf("成绩%d\n", (*p1).stu_score);
+			break;
+		}
+		else
+		{
+			if ((*p1).next == NULL)
+			{
+				printf("未查找到目标！\n");
+				break;
+			}
+			else
+			{
+				p1 = (*p1).next;
+			}
+		}
 	}
 }
 
@@ -194,9 +213,10 @@ int main()
 		else if (input == 3)//根据学号查询并显示查询到的学生信息
 		{
 			NOP = Count();
+			char arr[10];
 			printf("\n请输入学号:");
-			scanf("%d", &z);
-			Search(z);
+			scanf("%s", arr);
+			Search(arr);
 		}
 		else if (input == 4)//显示全部
 		{
